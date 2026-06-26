@@ -1,0 +1,17 @@
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.vscode/
+*.log
+_Dependencies/
+.nuget/
+*.nupkg
+*.psess
+*.vsp
+_ReSharper*/
+.idea/
+*.db
