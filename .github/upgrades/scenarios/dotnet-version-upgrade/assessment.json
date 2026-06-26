@@ -4,35 +4,38 @@
       "code": true,
       "binaries": false
     },
-    "targetId": "net9.0",
-    "targetDisplayName": ".NETCoreApp,Version=v9.0"
+    "targetId": "net10.0",
+    "targetDisplayName": ".NETCoreApp,Version=v10.0"
   },
-  "analysisStartTime": "2026-06-26T17:45:55.1865383Z",
-  "analysisEndTime": "2026-06-26T17:45:55.3271641Z",
+  "analysisStartTime": "2026-06-26T18:32:16.3430766Z",
+  "analysisEndTime": "2026-06-26T18:32:18.867511Z",
   "privacyModeHelpUrl": "https://go.microsoft.com/fwlink/?linkid=2270980",
   "stats": {
     "summary": {
       "projects": 1,
-      "issues": 0,
-      "incidents": 0,
-      "effort": 0
+      "issues": 3,
+      "incidents": 5,
+      "effort": 5
     },
     "charts": {
       "severity": {
-        "Mandatory": 0,
+        "Mandatory": 1,
         "Optional": 0,
-        "Potential": 0,
+        "Potential": 4,
         "Information": 0
       },
-      "category": {}
+      "category": {
+        "Project": 1,
+        "Api": 4
+      }
     }
   },
   "projects": [
     {
       "path": "WeatherMCPServer.csproj",
       "startingProject": true,
-      "issues": 0,
-      "storyPoints": 0,
+      "issues": 3,
+      "storyPoints": 5,
       "properties": {
         "appName": "WeatherMCPServer",
         "projectKind": "DotNetCoreApp",
@@ -50,13 +53,186 @@
         "numberOfCodeFiles": 3,
         "linesTotal": 222,
         "linesOfCode": 222,
-        "totalApiScanned": 0,
-        "minLinesOfCodeToChange": 0,
-        "maxLinesOfCodeToChange": 0
+        "totalApiScanned": 220,
+        "minLinesOfCodeToChange": 4,
+        "maxLinesOfCodeToChange": 4
       },
-      "ruleInstances": [],
+      "ruleInstances": [
+        {
+          "incidentId": "c9c8e091-7c07-4755-aef4-f22c4ea6cc09",
+          "ruleId": "Project.0002",
+          "projectPath": "WeatherMCPServer.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Current target framework: net9.0\nRecommended target framework: net10.0",
+              "protected": "Current target framework: net9.0\nRecommended target framework: net10.0"
+            },
+            "kind": "File",
+            "path": "WeatherMCPServer.csproj",
+            "snippet": "Current target framework: net9.0\nRecommended target framework: net10.0",
+            "protectedSnippet": "Current target framework: net9.0\nRecommended target framework: net10.0",
+            "properties": {
+              "CurrentTargetFramework": "net9.0",
+              "RecommendedTargetFramework": "net10.0"
+            }
+          }
+        },
+        {
+          "incidentId": "a88d3dea-08bd-467c-98d9-5341e6baad78",
+          "ruleId": "Api.0003",
+          "description": "Breaking change: Message no longer duplicated in Console log output ",
+          "projectPath": "WeatherMCPServer.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "builder.Logging.AddConsole(consoleLogOptions =\u003E\r\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0{\r\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0// Configure all logs to go to stderr\r\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0consoleLogOptions.LogToStandardErrorThreshold = LogLevel.Trace;\r\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0});",
+              "protected": "M:Microsoft.Extensions.Logging.ConsoleLoggerExtensions.AddConsole(Microsoft.Extensions.Logging.ILoggingBuilder,System.Action{Microsoft.Extensions.Logging.Console.ConsoleLoggerOptions})"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "builder.Logging.AddConsole(consoleLogOptions =\u003E\r\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0{\r\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0// Configure all logs to go to stderr\r\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0consoleLogOptions.LogToStandardErrorThreshold = LogLevel.Trace;\r\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0});",
+            "protectedSnippet": "M:Microsoft.Extensions.Logging.ConsoleLoggerExtensions.AddConsole(Microsoft.Extensions.Logging.ILoggingBuilder,System.Action{Microsoft.Extensions.Logging.Console.ConsoleLoggerOptions})",
+            "label": "M:Microsoft.Extensions.Logging.ConsoleLoggerExtensions.AddConsole(Microsoft.Extensions.Logging.ILoggingBuilder,System.Action{Microsoft.Extensions.Logging.Console.ConsoleLoggerOptions})",
+            "links": [
+              {
+                "title": "API documentation",
+                "url": "https://github.com/dotnet/docs/blob/main/docs/core/compatibility/extensions/10.0/console-json-logging-duplicate-messages.md",
+                "isCustom": false
+              }
+            ],
+            "line": 10,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "abea1e12-fbb1-4109-917f-9c7291de6754",
+          "ruleId": "Api.0002",
+          "description": "Breaking change: New TimeSpan.From*() overloads that take integers ",
+          "projectPath": "WeatherMCPServer.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var httpClient = new HttpClient() { Timeout = TimeSpan.FromSeconds(30) };",
+              "protected": "M:System.TimeSpan.FromSeconds(System.Int64)"
+            },
+            "kind": "File",
+            "path": "TestWeather.cs",
+            "snippet": "var httpClient = new HttpClient() { Timeout = TimeSpan.FromSeconds(30) };",
+            "protectedSnippet": "M:System.TimeSpan.FromSeconds(System.Int64)",
+            "label": "M:System.TimeSpan.FromSeconds(System.Int64)",
+            "links": [
+              {
+                "title": "API documentation",
+                "url": "https://github.com/dotnet/docs/blob/main/docs/core/compatibility/core-libraries/9.0/timespan-from-overloads.md",
+                "isCustom": false
+              }
+            ],
+            "line": 5,
+            "column": 0
+          }
+        },
+        {
+          "incidentId": "b02463ec-8e0b-4461-9f79-cffca599eb2f",
+          "ruleId": "Api.0003",
+          "description": "Breaking change - Streaming HTTP responses enabled by default in browser HTTP clients ",
+          "projectPath": "WeatherMCPServer.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var payload = await resp.Content.ReadFromJsonAsync\u003CT\u003E(cancellationToken: cancellationToken).ConfigureAwait(false);",
+              "protected": "T:System.Net.Http.HttpContent"
+            },
+            "kind": "File",
+            "path": "WeatherTools.cs",
+            "snippet": "var payload = await resp.Content.ReadFromJsonAsync\u003CT\u003E(cancellationToken: cancellationToken).ConfigureAwait(false);",
+            "protectedSnippet": "T:System.Net.Http.HttpContent",
+            "label": "T:System.Net.Http.HttpContent",
+            "links": [
+              {
+                "title": "API documentation",
+                "url": "https://github.com/dotnet/docs/blob/main/docs/core/compatibility/networking/10.0/default-http-streaming.md",
+                "isCustom": false
+              }
+            ],
+            "line": 141,
+            "column": 8
+          }
+        },
+        {
+          "incidentId": "68b4331c-1e4f-4a40-84ba-248064e8f275",
+          "ruleId": "Api.0003",
+          "description": "Breaking change: URI length limits removed ",
+          "projectPath": "WeatherMCPServer.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var geocodeUrl = $\u0022https://geocoding-api.open-meteo.com/v1/search?name={Uri.EscapeDataString(location)}\u0026count=1\u0022;",
+              "protected": "T:System.Uri"
+            },
+            "kind": "File",
+            "path": "WeatherTools.cs",
+            "snippet": "var geocodeUrl = $\u0022https://geocoding-api.open-meteo.com/v1/search?name={Uri.EscapeDataString(location)}\u0026count=1\u0022;",
+            "protectedSnippet": "T:System.Uri",
+            "label": "T:System.Uri",
+            "links": [
+              {
+                "title": "API documentation",
+                "url": "https://github.com/dotnet/docs/blob/main/docs/core/compatibility/networking/10.0/uri-length-limits-removed.md",
+                "isCustom": false
+              }
+            ],
+            "line": 41,
+            "column": 8
+          }
+        }
+      ],
       "features": []
     }
   ],
-  "rules": {}
+  "rules": {
+    "Project.0002": {
+      "id": "Project.0002",
+      "isFeature": false,
+      "description": "Project\u0027s target framework(s) needs to be changed to the new target framework that you selected for this upgrade.\n\nDuring upgrade target framework will be adjusted to corresponding platform when applicable. In some cases project would result in multiple target frameworks after the upgrade if it was using features that now have their own platforms in modern .NET frameworks (windows, iOS, Android etc).",
+      "label": "Project\u0027s target framework(s) needs to be changed",
+      "severity": "Mandatory",
+      "effort": 1,
+      "links": [
+        {
+          "title": "Overview of porting from .NET Framework to .NET",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2265227",
+          "isCustom": false
+        },
+        {
+          "title": ".NET project SDKs",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2265226",
+          "isCustom": false
+        }
+      ]
+    },
+    "Api.0003": {
+      "id": "Api.0003",
+      "isFeature": false,
+      "description": "API has a behavioral change in selected .NET version: code and binaries may behave differently at runtime without needing recompilation, but the new behavior might be undesirable and require updates.",
+      "label": "Behavioral change in selected .NET version",
+      "severity": "Potential",
+      "effort": 1
+    },
+    "Api.0002": {
+      "id": "Api.0002",
+      "isFeature": false,
+      "description": "API is source incompatible for selected .NET version: requires code changes to compile successfully when targeting a new version, such as removing obsolete APIs or changing method signatures.",
+      "label": "Source incompatible for selected .NET version",
+      "severity": "Potential",
+      "effort": 1,
+      "links": [
+        {
+          "title": "Breaking changes in .NET",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2262679",
+          "isCustom": false
+        }
+      ]
+    }
+  }
 }

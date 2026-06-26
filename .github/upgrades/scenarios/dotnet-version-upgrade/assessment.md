@@ -1,6 +1,6 @@
 # Projects and dependencies analysis
 
-This document provides a comprehensive overview of the projects and their dependencies in the context of upgrading to .NETCoreApp,Version=v9.0.
+This document provides a comprehensive overview of the projects and their dependencies in the context of upgrading to .NETCoreApp,Version=v10.0.
 
 ## Table of Contents
 
@@ -26,19 +26,19 @@ This document provides a comprehensive overview of the projects and their depend
 
 | Metric | Count | Status |
 | :--- | :---: | :--- |
-| Total Projects | 1 | 0 require upgrade |
+| Total Projects | 1 | All require upgrade |
 | Total NuGet Packages | 2 | All compatible |
 | Total Code Files | 3 |  |
-| Total Code Files with Incidents | 0 |  |
+| Total Code Files with Incidents | 4 |  |
 | Total Lines of Code | 222 |  |
-| Total Number of Issues | 0 |  |
-| Estimated LOC to modify | 0+ | at least 0.0% of codebase |
+| Total Number of Issues | 5 |  |
+| Estimated LOC to modify | 4+ | at least 1.8% of codebase |
 
 ### Projects Compatibility
 
 | Project | Target Framework | Difficulty | Package Issues | API Issues | Binding Issues | Est. LOC Impact | Description |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
-| [WeatherMCPServer.csproj](#weathermcpservercsproj) | net9.0 | ✅ None | 0 | 0 | 0 |  | DotNetCoreApp, Sdk Style = True |
+| [WeatherMCPServer.csproj](#weathermcpservercsproj) | net9.0 | 🟢 Low | 0 | 4 | 0 | 4+ | DotNetCoreApp, Sdk Style = True |
 
 ### Package Compatibility
 
@@ -54,10 +54,10 @@ This document provides a comprehensive overview of the projects and their depend
 | Category | Count | Impact |
 | :--- | :---: | :--- |
 | 🔴 Binary Incompatible | 0 | High - Require code changes |
-| 🟡 Source Incompatible | 0 | Medium - Needs re-compilation and potential conflicting API error fixing |
-| 🔵 Behavioral change | 0 | Low - Behavioral changes that may require testing at runtime |
-| ✅ Compatible | 0 |  |
-| ***Total APIs Analyzed*** | ***0*** |  |
+| 🟡 Source Incompatible | 1 | Medium - Needs re-compilation and potential conflicting API error fixing |
+| 🔵 Behavioral change | 3 | Low - Behavioral changes that may require testing at runtime |
+| ✅ Compatible | 216 |  |
+| ***Total APIs Analyzed*** | ***220*** |  |
 
 ## Aggregate NuGet packages details
 
@@ -77,6 +77,10 @@ This document provides a comprehensive overview of the projects and their depend
 
 | API | Count | Percentage | Category |
 | :--- | :---: | :---: | :--- |
+| M:Microsoft.Extensions.Logging.ConsoleLoggerExtensions.AddConsole(Microsoft.Extensions.Logging.ILoggingBuilder,System.Action{Microsoft.Extensions.Logging.Console.ConsoleLoggerOptions}) | 1 | 25.0% | Behavioral Change |
+| M:System.TimeSpan.FromSeconds(System.Int64) | 1 | 25.0% | Source Incompatible |
+| T:System.Net.Http.HttpContent | 1 | 25.0% | Behavioral Change |
+| T:System.Uri | 1 | 25.0% | Behavioral Change |
 
 ## Projects Relationship Graph
 
@@ -98,14 +102,16 @@ flowchart LR
 
 #### Project Info
 
-- **Current Target Framework:** net9.0✅
+- **Current Target Framework:** net9.0
+- **Proposed Target Framework:** net10.0
 - **SDK-style**: True
 - **Project Kind:** DotNetCoreApp
 - **Dependencies**: 0
 - **Dependants**: 0
 - **Number of Files**: 3
+- **Number of Files with Incidents**: 4
 - **Lines of Code**: 222
-- **Estimated LOC to modify**: 0+ (at least 0.0% of the project)
+- **Estimated LOC to modify**: 4+ (at least 1.8% of the project)
 
 #### Dependency Graph
 
@@ -127,8 +133,8 @@ flowchart TB
 | Category | Count | Impact |
 | :--- | :---: | :--- |
 | 🔴 Binary Incompatible | 0 | High - Require code changes |
-| 🟡 Source Incompatible | 0 | Medium - Needs re-compilation and potential conflicting API error fixing |
-| 🔵 Behavioral change | 0 | Low - Behavioral changes that may require testing at runtime |
-| ✅ Compatible | 0 |  |
-| ***Total APIs Analyzed*** | ***0*** |  |
+| 🟡 Source Incompatible | 1 | Medium - Needs re-compilation and potential conflicting API error fixing |
+| 🔵 Behavioral change | 3 | Low - Behavioral changes that may require testing at runtime |
+| ✅ Compatible | 216 |  |
+| ***Total APIs Analyzed*** | ***220*** |  |
 
